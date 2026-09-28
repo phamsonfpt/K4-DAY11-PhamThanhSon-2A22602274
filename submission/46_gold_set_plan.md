@@ -1,18 +1,5 @@
-# Đề xuất gold set theo camera — tình huống giả lập
-
-**Đầu bài:** 50.000 frame từ bốn camera SVM, ngân sách chọn 200 frame để review/gold. Đây là tình huống trên slide,
-**không phải** 50.000 frame có trong repo. Phân bổ đúng 200 ở `45_sampling_plan.csv` cho bốn camera, mỗi camera có
-normal và hard slice. “Gold set” ở đây là **kế hoạch tạo** reference sau kiểm chứng, không phải teaching reference
-ADASIND hoặc nhãn bạn vừa vẽ. Nếu cần, dùng `notebooks/day11-svm360-colab.ipynb` để thử tổng phân bổ; notebook
-không làm thay phần lý do.
-
-| camera_id | Hard case cần chọn | Vì sao dễ sai | Annotation space / calibration cần giữ | Cách review trước khi gọi là gold |
-|---|---|---|---|---|
-| front | TODO | TODO | TODO | TODO |
-| rear | TODO | TODO | TODO | TODO |
-| left | TODO | TODO | TODO | TODO |
-| right | TODO | TODO | TODO | TODO |
-
-- Khi nào cần refresh gold set (đổi camera, calibration hoặc rule): TODO
-- Một ca seam/cross-camera cần policy và evidence trước khi ghép hai box: TODO
-- Vì sao peer agreement hoặc quality report trên ảnh một camera chưa chứng minh gold set đúng cho cả bốn camera: TODO
+# Kế hoạch Gold Set cho 4 camera
+- **front**: Cần test kỹ các ca normal/hard (ngược sáng). Dễ bị mất vật ở xa. Cần 1 QC độc lập.
+- **rear**: Bị ánh đèn pha (hard). Calibration quan trọng. Bất đồng giải quyết qua vote 3 người.
+- **left**: Fisheye méo nặng. Refresh sau 500 ảnh.
+- **right**: Policy cho seam: Nếu vật thể xuất hiện >50% ở camera right thì right ưu tiên vẽ.

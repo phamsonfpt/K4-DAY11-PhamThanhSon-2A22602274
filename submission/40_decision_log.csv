@@ -1,1 +1,5 @@
 id,date,question,decision,rationale,status
+1,2026-09-28,Quy định vẽ box sát viền?,Chờ guideline mới.,Cần update rules_version,escalated
+2,2026-09-28,Model dự đoán quá nhiều spurious?,Chuyển AI Team.,Chưa có data fisheye,escalated
+3,2026-09-28,Thiếu R4 R5 trong adasind_102750?,Yêu cầu annotator vẽ bù,Đúng luật,resolved
+4,2026-09-28,Box R5 Rework không nhận?,Giữ nguyên do quá bé,Công cụ không nhận IoU < 0.3,resolved

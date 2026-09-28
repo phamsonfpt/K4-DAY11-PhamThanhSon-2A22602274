@@ -1,0 +1,4 @@
+# Exit ticket
+1. Một vật ở vùng seam giữa hai camera xuất hiện với hai box khác nhau: đó là lỗi DUPLICATE hay cần quy tắc riêng? Cần quy tắc riêng (không hẳn là DUPLICATE nếu chưa gộp hệ thống). Trên hệ thống đa camera, box sẽ được project sang 3D. Cần policy giữ 1 box ở camera có góc nhìn tốt hơn.
+2. Một vật đi qua nhiều frame trên cùng camera: Giữ cùng ID nếu vật chưa ra khỏi khung hình hoàn toàn. Thêm keyframe khi vật đổi hướng đột ngột. Trạng thái Outside dùng khi bị che khuất hoàn toàn. Bằng chứng cần trước khi nối track qua 2 camera: Timestamp đồng bộ và ma trận Calibration camera chuẩn.
+3. Nhìn lại cả buổi: Xung đột tại R5 (adasind_102750.jpg) do vật thể quá bé, tôi chọn cách rework nhưng tool gạt vì độ che khuất/IoU. Xử lý: giữ nguyên và giải thích trong delta. Đề xuất: Thay đổi quy chuẩn kích thước tối thiểu trong guideline patch.
